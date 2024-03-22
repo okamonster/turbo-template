@@ -3,5 +3,6 @@
     { "pattern": "apps/*/" },
     { "pattern": "packages/*/" }
   ],
-  "prettier.prettierPath": "./node_modules/prettier/index.mjs"
+  "prettier.prettierPath": "./node_modules/prettier/index.mjs",
+  "eslint.useESLintClass": true
 }
