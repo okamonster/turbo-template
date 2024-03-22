@@ -127,5 +127,6 @@ module.exports = {
     'no-nested-ternary': 'error',
     // 詳細: https://eslint.org/docs/latest/rules/no-console
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'import/no-unresolved': 'off',
   },
 }
