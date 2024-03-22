@@ -1,20 +1,20 @@
-const { resolve } = require("node:path");
+const { resolve } = require('node:path')
 
-const project = resolve(process.cwd(), "tsconfig.json");
+const project = resolve(process.cwd(), 'tsconfig.json')
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "prettier",
-    require.resolve("@vercel/style-guide/eslint/next"),
-    "eslint-config-turbo",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier',
+    require.resolve('@vercel/style-guide/eslint/next'),
+    'eslint-config-turbo',
   ],
   globals: {
     React: true,
@@ -24,9 +24,9 @@ module.exports = {
     node: true,
     browser: true,
   },
-  plugins: ["only-warn"],
+  plugins: ['only-warn'],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {
         project,
       },
@@ -34,98 +34,98 @@ module.exports = {
   },
   ignorePatterns: [
     // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
+    '.*.js',
+    'node_modules/',
   ],
-  overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
+  overrides: [{ files: ['*.js?(x)', '*.ts?(x)'] }],
   rules: {
-    "prefer-const": "error",
-    "prefer-arrow-callback": "error",
-    "@typescript-eslint/consistent-type-imports": [
-      "warn",
+    'prefer-const': 'error',
+    'prefer-arrow-callback': 'error',
+    '@typescript-eslint/consistent-type-imports': [
+      'warn',
       {
-        prefer: "type-imports",
+        prefer: 'type-imports',
       },
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        varsIgnorePattern: "^_",
-        argsIgnorePattern: "^_",
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
       },
     ],
     // 詳細: https://typescript-eslint.io/rules/consistent-type-definitions/
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     // 詳細: @typescript-eslint/naming-convention
-    "@typescript-eslint/naming-convention": [
-      "error",
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
-        selector: "variable",
-        format: ["strictCamelCase", "StrictPascalCase", "UPPER_CASE"],
-        leadingUnderscore: "allow",
+        selector: 'variable',
+        format: ['strictCamelCase', 'StrictPascalCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
       },
       {
-        selector: "parameter",
-        format: ["strictCamelCase"],
+        selector: 'parameter',
+        format: ['strictCamelCase'],
       },
       {
-        selector: "class",
-        format: ["StrictPascalCase"],
+        selector: 'class',
+        format: ['StrictPascalCase'],
         custom: {
-          regex: "send|start|find",
+          regex: 'send|start|find',
           match: false,
         },
       },
       {
-        selector: "typeLike",
-        format: ["StrictPascalCase"],
+        selector: 'typeLike',
+        format: ['StrictPascalCase'],
       },
       {
-        selector: "enumMember",
-        format: ["StrictPascalCase"],
+        selector: 'enumMember',
+        format: ['StrictPascalCase'],
       },
       // 変数名のprefixの規則
       {
-        selector: "variable",
-        types: ["boolean"],
+        selector: 'variable',
+        types: ['boolean'],
         // prefix以降がPascalCaseである必要がある。検証の解決順はprefix -> format
-        format: ["PascalCase"],
-        prefix: ["is", "can", "should", "has", "did", "will"],
+        format: ['PascalCase'],
+        prefix: ['is', 'can', 'should', 'has', 'did', 'will'],
       },
     ],
-    "react/prop-types": "off",
-    "react/jsx-pascal-case": "error",
+    'react/prop-types': 'off',
+    'react/jsx-pascal-case': 'error',
     // 詳細: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
-    "react/self-closing-comp": "error",
+    'react/self-closing-comp': 'error',
     // 詳細: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
-    "react/jsx-curly-brace-presence": "error",
+    'react/jsx-curly-brace-presence': 'error',
     // 詳細: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/array-type.md
-    "@typescript-eslint/array-type": [
-      "error",
+    '@typescript-eslint/array-type': [
+      'error',
       {
-        default: "generic",
+        default: 'generic',
       },
     ],
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
-        "newlines-between": "always",
+        'newlines-between': 'always',
         warnOnUnassignedImports: true,
       },
     ],
-    "no-restricted-imports": [
-      "error",
+    'no-restricted-imports': [
+      'error',
       {
-        patterns: ["../"],
+        patterns: ['../'],
       },
     ],
     // 詳細: https://eslint.org/docs/latest/rules/curly
-    curly: ["error", "all"],
+    curly: ['error', 'all'],
     // 詳細: https://eslint.org/docs/latest/rules/object-shorthand
-    "object-shorthand": ["error", "always"],
+    'object-shorthand': ['error', 'always'],
     // 詳細: https://eslint.org/docs/latest/rules/no-nested-ternary
-    "no-nested-ternary": "error",
+    'no-nested-ternary': 'error',
     // 詳細: https://eslint.org/docs/latest/rules/no-console
-    "no-console": ["error", { allow: ["warn", "error"] }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
   },
-};
+}
